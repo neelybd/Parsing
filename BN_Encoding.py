@@ -1,18 +1,19 @@
 import numpy as np
 import pandas as pd
-from joblib import delayed, parallel
+from joblib import delayed, Parallel
 from tkinter import Tk
-
+import multiprocessing
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.0")
-    print("Date: 2019-01-19")
+    print("Release: 1.1")
+    print("Date: 2019-02-04")
     print("Author: Brian Neely")
     print()
     print()
-    print("-----")
+    print("This program takes a csv given csv, parses, and encodes a given column of the data from a given deliminator.")
+    print("The processing time varies exponentially with the number of encoding categories and rows.")
     print()
     print()
 
@@ -50,33 +51,80 @@ def main():
     print()
     # Select Encoding
     deliminator = input("Enter deliminators separated by spaces: ")
+    print()
+    print("Processing File: " + file_in)
 
     # Parsed array
+    print("Parsing column: [" + str(column) + "]...")
     parsed_array = [i.split(deliminator) for i in data[column]]
+    print("Column: [" + str(column) + "] Parsed!")
+    print()
 
     # Unpivot array
-    parsed_list = list()
-    for i in parsed_array:
-        parsed_list = parsed_list + i
+    parse_list = list()
+    for i in range(len(parsed_array)):
+        parse_list.extend(parsed_array[i])
 
     # Dedupe list
+    print("Removing Duplicates for Parsed Field...")
     deduped_list = list()
-    for i in parsed_list:
+    for index, i in enumerate(parse_list):
         if i not in deduped_list:
             deduped_list.append(i)
 
-    # Add columns to data out
-    data_out = data
-    for i in deduped_list:
-        data_out[i] = ""
-        data_out[i][data_out[column].str.find(i) != -1] = 1
+    # Remove None for Deduped List
+    deduped_list = [x for x in deduped_list if x is not None]
+    print("Duplicates Removed!")
+    print()
+
+    print("Number of Unique words: " + str(len(deduped_list)))
+    print()
+
+    # *****Split data for parallel processing*****
+    print("Calculating Splits...")
+    # Find number of CPUs and multiply by 16 for number of parallel threads
+    num_splits = multiprocessing.cpu_count() * 16
+    # Calculate the split locations
+    split_locations = np.linspace(0,len(data),num_splits)
+    # Rounds up the  split_locations
+    split_locations = np.ceil(split_locations)
+    # Convert split_locations to int for splitting data
+    split_locations = split_locations.astype(int)
+    # Split data for parallel processing
+    data_split = np.split(data, split_locations)
+    print("Splits Calculated!")
+    print()
+    # *****End Split*****
+
+    # Parse Data using parallel process
+    print("Encoding Parsed Data...")
+    data_split_parsed = Parallel(n_jobs=-2)(delayed(encoding_data)(par_index + 1, len(data_split), i, column, deduped_list) for par_index, i in enumerate(data_split))
+    print("Encoding Complete!")
+    print()
+
+    # Union split data frames
+    data_out = pd.concat(data_split_parsed)
 
     #Write CSV
+    print("Writing CSV File...")
     data_out.to_csv(file_out)
+    print("Wrote CSV File!")
+    print()
 
     print("Encoding Completed on column: [" + column + "]")
     print("File written to: " + file_out)
     input("Press Enter to close...")
+
+def encoding_data(par_index, par_len, data, column, deduped_list):
+    pd.options.mode.chained_assignment = None  # default='warn'
+    for index, i in enumerate(deduped_list):
+        # Add Columns
+        data[i] = ""
+        # Encode Columns
+        data[i][data[column].str.find(i) != -1] = 1
+
+    print("Completed: " + str(par_index) + " out of " + str(par_len))
+    return data
 
 def column_selection(headers):
     while True:
