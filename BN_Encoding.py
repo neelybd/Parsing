@@ -7,7 +7,7 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.1")
+    print("Release: 1.2")
     print("Date: 2019-02-04")
     print("Author: Brian Neely")
     print()
