@@ -7,7 +7,7 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.2")
+    print("Release: 1.3")
     print("Date: 2019-02-04")
     print("Author: Brian Neely")
     print()
@@ -119,7 +119,7 @@ def encoding_data(par_index, par_len, data, column, deduped_list):
     pd.options.mode.chained_assignment = None  # default='warn'
     for index, i in enumerate(deduped_list):
         # Add Columns
-        data[i] = ""
+        data[i] = "0"
         # Encode Columns
         data[i][data[column].str.find(i) != -1] = 1
 
