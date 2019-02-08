@@ -7,8 +7,8 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.4")
-    print("Date: 2019-02-06")
+    print("Release: 1.5")
+    print("Date: 2019-02-08")
     print("Author: Brian Neely")
     print()
     print()
@@ -68,10 +68,15 @@ def main():
     for i in range(len(parsed_array)):
         parse_list.extend(parsed_array[i])
 
+    # Lowercase parse_list
+    parse_list_lower = list()
+    for i in parse_list:
+        parse_list_lower.append(i.lower())
+
     # Dedupe list
     print("Removing Duplicates for Parsed Field...")
     deduped_list = list()
-    for index, i in enumerate(parse_list):
+    for index, i in enumerate(parse_list_lower):
         if i not in deduped_list:
             deduped_list.append(i)
 

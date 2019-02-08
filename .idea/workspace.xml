@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="">
+    <list default="true" id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="1.4&#10;   Added different encoder options for csv input file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BN_Encoding.exe" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Encoding.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BN_Encoding.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BN_Encoding.py" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Encoding.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,15 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BN_Encoding.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="51">
+              <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -57,6 +54,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -68,10 +66,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -148,19 +146,26 @@
       <option name="project" value="LOCAL" />
       <updated>1549326275039</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1.4&#10;   Added different encoder options for csv input file">
+      <created>1549466018259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549466018259</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947312" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -178,7 +183,8 @@
     <MESSAGE value="1.1&#10;   Added parallel processing&#10;   Updated method of converting array to list&#10;   Added print statements" />
     <MESSAGE value="1.2&#10;   Added EXE version of project." />
     <MESSAGE value="1.3&#10;   Changed no encode present to 0 from &quot;&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.3&#10;   Changed no encode present to 0 from &quot;&quot;" />
+    <MESSAGE value="1.4&#10;   Added different encoder options for csv input file" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.4&#10;   Added different encoder options for csv input file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BN_Encoding.exe">
@@ -186,11 +192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BN_Encoding.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
