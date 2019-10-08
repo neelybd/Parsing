@@ -8,8 +8,8 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.6")
-    print("Date: 2019-03-26")
+    print("Release: 1.7")
+    print("Date: 2019-10-08")
     print("Author: Brian Neely")
     print()
     print()
@@ -29,7 +29,7 @@ def main():
         input("Program Terminated. Press Enter to continue...")
         exit()
 
-    # Set ouput file
+    # Set output file
     file_out = asksaveasfilename(initialdir=file_in, title="Select file",
                                  filetypes=(("Comma Separated Values", "*.csv"), ("all files", "*.*")))
     if not file_out:
@@ -57,9 +57,17 @@ def main():
     print()
     print("Processing File: " + file_in)
 
+    # Replace first deliminator if it is in the first character position
+    column_list = []
+    for i in data[column]:
+        if type(i) != float:
+            if i.find(deliminator) == 0:
+                i = i[1:]
+            column_list.append(i)
+
     # Parsed array
     print("Parsing column: [" + str(column) + "]...")
-    parsed_array = [i.split(deliminator) for i in data[column]]
+    parsed_array = [i.split(deliminator) for i in column_list]
     print("Column: [" + str(column) + "] Parsed!")
     print()
 
