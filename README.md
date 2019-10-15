@@ -5,5 +5,4 @@ It operates very similar to a one-hot encoder, except it doesn't remove the last
 
 It's primary use is to encode every word within a string or to break up a string based on a delimiter.
 
-
-The processing time varies exponentially with the number of encoding categories and rows.
+    The processing time varies exponentially with the number of encoding categories and rows.
