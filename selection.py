@@ -1,15 +1,15 @@
 import time
 
 
-print("Function: Selection")
-print("Release: 1.0.0")
-print("Date: 2020-05-29")
-print("Author: Brian Neely")
-print()
-print()
-print("Functions for variable selection")
-print()
-print()
+# print("Function: Selection")
+# print("Release: 1.0.0")
+# print("Date: 2020-05-29")
+# print("Author: Brian Neely")
+# print()
+# print()
+# print("Functions for variable selection")
+# print()
+# print()
 
 
 def y_n_question(question):
@@ -39,6 +39,7 @@ def list_selection(list_in, note, type_in):
         else:
             break
     return column
+
 
 def list_selection_multiple(list_in, note, type_in):
     # Dedupe list_in
@@ -104,6 +105,7 @@ def column_selection(headers, task):
         else:
             break
     return column
+
 
 def column_selection_multi(headers, task):
     while True:

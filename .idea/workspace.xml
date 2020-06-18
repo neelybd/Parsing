@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/neely.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file_handling.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/selection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BN_Parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549638559604</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1.8&#10;   Functionalized parsing.&#10;   Added test for optimum number of splits.">
+      <created>1592495044684</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592495044684</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -125,17 +129,22 @@
     <MESSAGE value="1.3&#10;   Changed no encode present to 0 from &quot;&quot;" />
     <MESSAGE value="1.4&#10;   Added different encoder options for csv input file" />
     <MESSAGE value="1.5&#10;   Converted all parsed values to lowercase for input into a SQL database" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.5&#10;   Converted all parsed values to lowercase for input into a SQL database" />
+    <MESSAGE value="1.8&#10;   Functionalized parsing.&#10;   Added test for optimum number of splits." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.8&#10;   Functionalized parsing.&#10;   Added test for optimum number of splits." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1592494834505">
+    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1592495041977">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592494834505" />
+    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592495041977" />
     <state x="1221" y="343" key="SettingsEditor" timestamp="1592411044481">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1221" y="343" key="SettingsEditor/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592411044481" />
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592495047717">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592495047717" />
     <state x="1713" y="0" width="1734" height="1407" key="dock-window-1" timestamp="1592412472424">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

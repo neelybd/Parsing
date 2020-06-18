@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
 from joblib import delayed, Parallel
-from tkinter import Tk
 import multiprocessing
-from tkinter.filedialog import askopenfilename, asksaveasfilename
 from file_handling import *
 from selection import *
 from functions import *
@@ -13,8 +11,8 @@ import operator
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.8")
-    print("Date: 2020-06-17")
+    print("Release: 1.8.1")
+    print("Date: 2020-06-18")
     print("Author: Brian Neely")
     print()
     print()
@@ -23,9 +21,6 @@ def main():
     print("The processing time varies exponentially with the number of encoding categories and rows.")
     print()
     print()
-
-    # Hide Tkinter GUI
-    Tk().withdraw()
 
     # Find input file
     file_in = select_file_in()
@@ -186,6 +181,9 @@ def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=Fa
         data_encoded = pd.concat(data_split_parsed)
 
     else:
+        # Start timer
+        start_time = time.time()
+
         # Single Thread
         data_encoded = encoding_data(1, 1, data_filled, column, deduped_list_concat, encode_concate)
 
@@ -216,4 +214,5 @@ def encoding_data(par_index, par_len, data, column, deduped_list, encode_concate
 
 
 if __name__ == '__main__':
+    multiprocessing.freeze_support()
     main()

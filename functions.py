@@ -2,15 +2,15 @@ from collections import OrderedDict
 import numpy as np
 
 
-print("Function: Functions")
-print("Release: 1.0.0")
-print("Date: 2020-06-17")
-print("Author: Brian Neely")
-print()
-print()
-print("General Functions")
-print()
-print()
+# print("Function: Functions")
+# print("Release: 1.0.0")
+# print("Date: 2020-06-17")
+# print("Author: Brian Neely")
+# print()
+# print()
+# print("General Functions")
+# print()
+# print()
 
 
 def dedupe_list(duplicate_list):
