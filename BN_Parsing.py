@@ -7,12 +7,13 @@ from selection import *
 from functions import *
 import time
 import operator
+from sklearn.feature_extraction.text import CountVectorizer
 
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.8.1")
-    print("Date: 2020-06-18")
+    print("Release: 1.10.0")
+    print("Date: 2020-06-23")
     print("Author: Brian Neely")
     print()
     print()
@@ -45,20 +46,34 @@ def main():
 
     print()
 
-    # Select Encoding Delimination
-    deliminator = input("Enter deliminators separated by spaces: ")
-    while deliminator is None:
-        deliminator = input("No deliminator selected! Enter deliminators separated by spaces: ")
-    print()
-    print("Processing File: " + file_in)
+    if y_n_question("Split data using spaces? Note: This will speed up processing time significantly. (y/n):"):
+        # Start Timer
+        start_time = time.time()
 
-    # Get name to append
-    encode_concate = input("Append string to encoded column name: ")
+        # Parse Data
+        parsed = vectorize_text(data, column)
 
-    # Set parallel to true
-    parallel = True
+        # Append original dataset to parsed dataset
+        data_out = pd.concat([data, parsed], axis=1, sort=False)
 
-    data_out = parse_and_encode_data(data, column, deliminator, encode_concate, parallel)
+        # Print Time
+        print("Parsing completed in " + str(round(time.time() - start_time, 2)) + " s")
+
+    else:
+        # Select Encoding Delimination
+        deliminator = input("Enter deliminators separated by spaces: ")
+        while deliminator is None:
+            deliminator = input("No deliminator selected! Enter deliminators separated by spaces: ")
+        print()
+        print("Processing File: " + file_in)
+
+        # Get name to append
+        encode_concate = input("Append string to encoded column name: ")
+
+        # Set parallel to true
+        parallel = True
+
+        data_out = parse_and_encode_data(data, column, deliminator, encode_concate, parallel)
 
     # Write CSV
     print("Writing CSV File...")
@@ -69,6 +84,23 @@ def main():
     print("Encoding Completed on column: [" + column + "]")
     print("File written to: " + file_out)
     input("Press Enter to close...")
+
+
+def vectorize_text (data, column):
+    # Set vectorizer from CountVectorizer
+    vectorizer = CountVectorizer()
+
+    # Fill NaN
+    data[column] = data[column].fillna("empty_text")
+
+    # Create sparse matrix of parsed text
+    X = vectorizer.fit_transform(data[column])
+
+    # Convert sparse matrix to DataFrame
+    parsed = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
+
+    # Return parsed data
+    return parsed
 
 
 def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=False):

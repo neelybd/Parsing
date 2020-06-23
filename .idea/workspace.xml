@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="">
+    <list default="true" id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="1.10.0&#10;   Added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BN_Parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Parsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selection.py" beforeDir="false" afterPath="$PROJECT_DIR$/selection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +18,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1dSG1GBF9qoKf8268mPS3faBVY3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -31,7 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/ProgramData/Miniconda3/envs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Stock_History_Tracker" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -117,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592495044684</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1.9&#10;   Bug fixed timer&#10;   Code cleanup">
+      <created>1592509984009</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1592509984009</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -130,29 +141,42 @@
     <MESSAGE value="1.4&#10;   Added different encoder options for csv input file" />
     <MESSAGE value="1.5&#10;   Converted all parsed values to lowercase for input into a SQL database" />
     <MESSAGE value="1.8&#10;   Functionalized parsing.&#10;   Added test for optimum number of splits." />
-    <option name="LAST_COMMIT_MESSAGE" value="1.8&#10;   Functionalized parsing.&#10;   Added test for optimum number of splits." />
+    <MESSAGE value="1.9&#10;   Bug fixed timer&#10;   Code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.9&#10;   Bug fixed timer&#10;   Code cleanup" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1592495041977">
+    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1592944411291">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592495041977" />
+    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592944411291" />
+    <state x="1500" y="456" key="FileChooserDialogImpl" timestamp="1592881920557">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1500" y="456" key="FileChooserDialogImpl/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592881920557" />
     <state x="1221" y="343" key="SettingsEditor" timestamp="1592411044481">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1221" y="343" key="SettingsEditor/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592411044481" />
-    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592495047717">
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592509986939">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592495047717" />
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592509986939" />
+    <state x="563" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1592868034254">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="563" y="525" key="com.intellij.ide.util.TipDialog/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592868034254" />
+    <state x="669" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592868433425">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="669" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592868433425" />
     <state x="1713" y="0" width="1734" height="1407" key="dock-window-1" timestamp="1592412472424">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1713" y="0" width="1734" height="1407" key="dock-window-1/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592412472424" />
-    <state x="1713" y="0" width="1734" height="1407" key="dock-window-2" timestamp="1592412571140">
+    <state x="1713" y="1" width="1734" height="1406" key="dock-window-2" timestamp="1592512781619">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1713" y="0" width="1734" height="1407" key="dock-window-2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592412571140" />
+    <state x="1713" y="1" width="1734" height="1406" key="dock-window-2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592512781619" />
   </component>
   <component name="masterDetails">
     <states>
