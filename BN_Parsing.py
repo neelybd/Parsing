@@ -8,11 +8,12 @@ from functions import *
 import time
 import operator
 from sklearn.feature_extraction.text import CountVectorizer
+import csv
 
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.10.0")
+    print("Release: 1.11.0")
     print("Date: 2020-06-23")
     print("Author: Brian Neely")
     print()
@@ -43,6 +44,14 @@ def main():
 
     # Select Column
     column = column_selection(headers, "parsing")
+
+    # Export list of parsed words
+    if y_n_question("Export list of parsed words (y/n): "):
+        # Set flag for export parse list
+        export_parsed_list = True
+
+        # Select second file out
+        file_out_parse_list = select_file_out_csv(file_out)
 
     print()
 
@@ -80,6 +89,29 @@ def main():
     data_out.to_csv(file_out, index=False)
     print("Wrote CSV File!")
     print()
+
+    # If parse list, write CSV
+    if export_parsed_list:
+        # Get original columns
+        headers_original = headers
+
+        # Get output headers
+        headers_new = list(data_out.columns.values)
+
+        # Add print statement and timer
+        print("Extracting new columns added...")
+        start_time = time.time()
+
+        # Look for differences between original headers and new
+        new_headers = list_diff(headers_original, headers_new)
+
+        # Print time and results
+        print(str(len(new_headers)) + " new columns found in " + str(round(time.time() - start_time, 2)) + " s")
+
+        # Write list
+        with open(file_out_parse_list, 'w') as write_file:
+            writer = csv.writer(write_file, dialect='excel')
+            writer.writerow(new_headers)
 
     print("Encoding Completed on column: [" + column + "]")
     print("File written to: " + file_out)

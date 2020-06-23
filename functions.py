@@ -3,8 +3,8 @@ import numpy as np
 
 
 # print("Function: Functions")
-# print("Release: 1.0.0")
-# print("Date: 2020-06-17")
+# print("Release: 1.1.0")
+# print("Date: 2020-06-23")
 # print("Author: Brian Neely")
 # print()
 # print()
@@ -30,3 +30,8 @@ def split_data(data, num_splits):
     data_split = np.split(data, split_locations)
 
     return data_split
+
+
+def list_diff(list_1, list_2):
+    # Return difference between lists
+    return [i for i in list_1 + list_2 if i not in list_1 or i not in list_2]
