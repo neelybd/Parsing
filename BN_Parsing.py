@@ -7,12 +7,14 @@ from selection import *
 from functions import *
 import time
 import operator
+from sklearn.feature_extraction.text import CountVectorizer
+import csv
 
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.8.1")
-    print("Date: 2020-06-18")
+    print("Release: 1.11.1")
+    print("Date: 2020-06-23")
     print("Author: Brian Neely")
     print()
     print()
@@ -43,22 +45,44 @@ def main():
     # Select Column
     column = column_selection(headers, "parsing")
 
+    # Export list of parsed words
+    if y_n_question("Export list of parsed words (y/n): "):
+        # Set flag for export parse list
+        export_parsed_list = True
+
+        # Select second file out
+        file_out_parse_list = select_file_out_csv(file_out)
+
     print()
 
-    # Select Encoding Delimination
-    deliminator = input("Enter deliminators separated by spaces: ")
-    while deliminator is None:
-        deliminator = input("No deliminator selected! Enter deliminators separated by spaces: ")
-    print()
-    print("Processing File: " + file_in)
+    if y_n_question("Split data using spaces? Note: This will speed up processing time significantly. (y/n):"):
+        # Start Timer
+        start_time = time.time()
 
-    # Get name to append
-    encode_concate = input("Append string to encoded column name: ")
+        # Parse Data
+        parsed, new_headers = vectorize_text(data, column)
 
-    # Set parallel to true
-    parallel = True
+        # Append original dataset to parsed dataset
+        data_out = pd.concat([data, parsed], axis=1, sort=False)
 
-    data_out = parse_and_encode_data(data, column, deliminator, encode_concate, parallel)
+        # Print Time
+        print("Parsing completed in " + str(round(time.time() - start_time, 2)) + " s")
+
+    else:
+        # Select Encoding Delimination
+        deliminator = input("Enter deliminators separated by spaces: ")
+        while deliminator is None:
+            deliminator = input("No deliminator selected! Enter deliminators separated by spaces: ")
+        print()
+        print("Processing File: " + file_in)
+
+        # Get name to append
+        encode_concate = input("Append string to encoded column name: ")
+
+        # Set parallel to true
+        parallel = True
+
+        data_out, new_headers = parse_and_encode_data(data, column, deliminator, encode_concate, parallel)
 
     # Write CSV
     print("Writing CSV File...")
@@ -66,9 +90,40 @@ def main():
     print("Wrote CSV File!")
     print()
 
+    # If parse list, write CSV
+    if export_parsed_list:
+        # Write list
+        with open(file_out_parse_list, 'w') as write_file:
+            writer = csv.writer(write_file, dialect='excel')
+            writer.writerow(new_headers)
+
     print("Encoding Completed on column: [" + column + "]")
     print("File written to: " + file_out)
     input("Press Enter to close...")
+
+
+def vectorize_text (data, column):
+    # Set vectorizer from CountVectorizer
+    vectorizer = CountVectorizer()
+
+    # Fill NaN
+    data[column] = data[column].fillna("empty_text")
+
+    # Create sparse matrix of parsed text
+    X = vectorizer.fit_transform(data[column])
+
+    # Convert sparse matrix to DataFrame
+    parsed = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
+
+    # ***** Get new columns added *****
+    # Get new headers
+    new_headers = list(parsed.columns.values)
+
+    # Print time and results
+    print(str(len(new_headers)) + " new columns found")
+
+    # Return parsed data
+    return parsed, new_headers
 
 
 def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=False):
@@ -197,8 +252,25 @@ def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=Fa
     # End time
     print("Parsing completed in " + str(round(time.time() - start_time, 2)) + " s")
 
+    # ***** Get new columns added *****
+    # Get original columns
+    headers_original = list(data.columns.values)
+
+    # Get output headers
+    headers_new = list(data_out.columns.values)
+
+    # Add print statement and timer
+    print("Extracting new columns added...")
+    start_time = time.time()
+
+    # Look for differences between original headers and new
+    new_headers = list_diff(headers_original, headers_new)
+
+    # Print time and results
+    print(str(len(new_headers)) + " new columns found in " + str(round(time.time() - start_time, 2)) + " s")
+
     # Return data
-    return data_out
+    return data_out, new_headers
 
 
 def encoding_data(par_index, par_len, data, column, deduped_list, encode_concate):
