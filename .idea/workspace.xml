@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="1.10.1&#10;   Added capability to write">
+    <list default="true" id="3fddbfd1-2eff-4bee-afee-deb6f813f6f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BN_Parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Parsing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="row_by_row_parse" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -139,6 +138,17 @@
     <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/BN_Encoding" />
@@ -174,10 +184,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="563" y="525" key="com.intellij.ide.util.TipDialog/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592868034254" />
-    <state x="669" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592868433425">
+    <state x="669" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592952944248">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="669" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592868433425" />
+    <state x="669" y="621" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592952944248" />
     <state x="1713" y="0" width="1734" height="1407" key="dock-window-1" timestamp="1592412472424">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

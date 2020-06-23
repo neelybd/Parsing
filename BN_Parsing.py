@@ -13,7 +13,7 @@ import csv
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.11.0")
+    print("Release: 1.11.1")
     print("Date: 2020-06-23")
     print("Author: Brian Neely")
     print()
@@ -60,10 +60,7 @@ def main():
         start_time = time.time()
 
         # Parse Data
-        parsed = vectorize_text(data, column)
-
-        # Append original dataset to parsed dataset
-        data_out = pd.concat([data, parsed], axis=1, sort=False)
+        data_out, new_headers = vectorize_text(data, column)
 
         # Print Time
         print("Parsing completed in " + str(round(time.time() - start_time, 2)) + " s")
@@ -82,7 +79,7 @@ def main():
         # Set parallel to true
         parallel = True
 
-        data_out = parse_and_encode_data(data, column, deliminator, encode_concate, parallel)
+        data_out, new_headers = parse_and_encode_data(data, column, deliminator, encode_concate, parallel)
 
     # Write CSV
     print("Writing CSV File...")
@@ -92,22 +89,6 @@ def main():
 
     # If parse list, write CSV
     if export_parsed_list:
-        # Get original columns
-        headers_original = headers
-
-        # Get output headers
-        headers_new = list(data_out.columns.values)
-
-        # Add print statement and timer
-        print("Extracting new columns added...")
-        start_time = time.time()
-
-        # Look for differences between original headers and new
-        new_headers = list_diff(headers_original, headers_new)
-
-        # Print time and results
-        print(str(len(new_headers)) + " new columns found in " + str(round(time.time() - start_time, 2)) + " s")
-
         # Write list
         with open(file_out_parse_list, 'w') as write_file:
             writer = csv.writer(write_file, dialect='excel')
@@ -131,8 +112,14 @@ def vectorize_text (data, column):
     # Convert sparse matrix to DataFrame
     parsed = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
 
+    # Get new headers
+    new_headers = list(parsed.columns.values)
+
+    # Append original dataset to parsed dataset
+    data_out = pd.concat([data, parsed], axis=1, sort=False)
+
     # Return parsed data
-    return parsed
+    return data_out, new_headers
 
 
 def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=False):
@@ -261,8 +248,24 @@ def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=Fa
     # End time
     print("Parsing completed in " + str(round(time.time() - start_time, 2)) + " s")
 
+    # Get original columns
+    headers_original = list(data.columns.values)
+
+    # Get output headers
+    headers_new = list(data_out.columns.values)
+
+    # Add print statement and timer
+    print("Extracting new columns added...")
+    start_time = time.time()
+
+    # Look for differences between original headers and new
+    new_headers = list_diff(headers_original, headers_new)
+
+    # Print time and results
+    print(str(len(new_headers)) + " new columns found in " + str(round(time.time() - start_time, 2)) + " s")
+
     # Return data
-    return data_out
+    return data_out, new_headers
 
 
 def encoding_data(par_index, par_len, data, column, deduped_list, encode_concate):
