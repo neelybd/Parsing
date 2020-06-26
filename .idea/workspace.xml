@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fddbfd1-2eff-4bee-afee-deb6f813f6f9" name="Default Changelist" comment="1.11.1&#10;   Fixed changes lost in merge">
+    <list default="true" id="3fddbfd1-2eff-4bee-afee-deb6f813f6f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BN_Parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592952962637</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1.11.3&#10;   Added print statements to vectorize function">
+      <created>1593191659328</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593191659328</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,13 +179,14 @@
     <MESSAGE value="1.9&#10;   Bug fixed timer&#10;   Code cleanup" />
     <MESSAGE value="1.10.0&#10;   Added sklearn parsing routine using CountVectorizer&#10;   Corrected starting print statement" />
     <MESSAGE value="1.11.1&#10;   Fixed changes lost in merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.11.1&#10;   Fixed changes lost in merge" />
+    <MESSAGE value="1.11.3&#10;   Added print statements to vectorize function" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.11.3&#10;   Added print statements to vectorize function" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1593191625449">
+    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1593191658908">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1593191625449" />
+    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1593191658908" />
     <state x="1500" y="456" key="FileChooserDialogImpl" timestamp="1592881920557">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -186,10 +195,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1221" y="343" key="SettingsEditor/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592411044481" />
-    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592952964487">
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1593191661390">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592952964487" />
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1593191661390" />
     <state x="563" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1592868034254">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

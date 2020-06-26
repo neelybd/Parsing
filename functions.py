@@ -3,8 +3,8 @@ import numpy as np
 
 
 # print("Function: Functions")
-# print("Release: 1.1.0")
-# print("Date: 2020-06-23")
+# print("Release: 1.1.1")
+# print("Date: 2020-06-26")
 # print("Author: Brian Neely")
 # print()
 # print()
@@ -33,5 +33,10 @@ def split_data(data, num_splits):
 
 
 def list_diff(list_1, list_2):
-    # Return difference between lists
+    # Return different items between lists
     return [i for i in list_1 + list_2 if i not in list_1 or i not in list_2]
+
+
+def list_common(list_1, list_2):
+    # Return common items between lists
+    return list(set(list_1).intersection(list_2))

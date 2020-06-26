@@ -13,7 +13,7 @@ import csv
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.11.3")
+    print("Release: 1.12.0")
     print("Date: 2020-06-26")
     print("Author: Brian Neely")
     print()
@@ -124,23 +124,39 @@ def vectorize_text(data, column):
     parsed = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
     print("Conversion completed!")
 
-    # Look for columns in the original data that matches new columns
+    # Look for columns in the original data that matches new columns and append _parsing to new columns
+    duplicate_found = True
+    print()
+    print("Looking of new columns that match from original data...")
+    while duplicate_found:
+        duplicate_found = False
+        # Create list of columns in original dataset
+        original_columns = list(data.columns.values)
+
+        # Create list of columns in new dataset
+        new_columns = list(parsed.columns.values)
+
+        # Create intersection of the two lists
+        intersection = list_common(new_columns, original_columns)
+
+        # If there is an intersection, rename in new columns
+        if len(intersection) > 0:
+            for i in intersection:
+                old_column_name = str(i)
+                new_column_name = str(i) + "_parsed"
+
+                # Rename column in parsed
+                print("Duplicate column found: {" + str(i) + "} Renaming new column to {" + new_column_name + "}.")
+                parsed.rename(columns={old_column_name: new_column_name}, inplace=True)
+
+                # Set flag for duplicate
+                duplicate_found = True
+
+    print("No duplicates left!")
+
+
     print()
     print("Creating list of new columns...")
-    any_match_found = True
-    while any_match_found:
-        any_match_found = False
-
-        for i in parsed:
-            column_match_found = False
-            for j in column:
-                # Set flag for found match
-                column_match_found = True
-
-            # If match found, add string into column name
-            parsed.rename(columns={i: i + "_parsed"}, inplace=True)
-            any_match_found = True
-
     # Get new headers
     new_headers = list(parsed.columns.values)
     print("List created!")
