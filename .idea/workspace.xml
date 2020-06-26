@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3fddbfd1-2eff-4bee-afee-deb6f813f6f9" name="Default Changelist" comment="">
+    <list default="true" id="3fddbfd1-2eff-4bee-afee-deb6f813f6f9" name="Default Changelist" comment="1.11.1&#10;   Fixed changes lost in merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BN_Parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/BN_Parsing.py" afterDir="false" />
     </list>
@@ -35,7 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Stock_History_Tracker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -66,7 +66,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="68efc7f9-3dfb-42a5-9b2a-6c3d515238b5" name="Default Changelist" comment="" />
+      <changelist id="3fddbfd1-2eff-4bee-afee-deb6f813f6f9" name="Default Changelist" comment="" />
       <created>1547921847508</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -135,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592944503784</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1.11.1&#10;   Fixed changes lost in merge">
+      <created>1592952962637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592952962637</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,7 +150,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -161,13 +170,14 @@
     <MESSAGE value="1.8&#10;   Functionalized parsing.&#10;   Added test for optimum number of splits." />
     <MESSAGE value="1.9&#10;   Bug fixed timer&#10;   Code cleanup" />
     <MESSAGE value="1.10.0&#10;   Added sklearn parsing routine using CountVectorizer&#10;   Corrected starting print statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.10.0&#10;   Added sklearn parsing routine using CountVectorizer&#10;   Corrected starting print statement" />
+    <MESSAGE value="1.11.1&#10;   Fixed changes lost in merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.11.1&#10;   Fixed changes lost in merge" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1592948443499">
+    <state x="1306" y="285" key="CommitChangelistDialog2" timestamp="1593191625449">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592948443499" />
+    <state x="1306" y="285" key="CommitChangelistDialog2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1593191625449" />
     <state x="1500" y="456" key="FileChooserDialogImpl" timestamp="1592881920557">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
@@ -176,10 +186,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1221" y="343" key="SettingsEditor/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592411044481" />
-    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592944506725">
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2" timestamp="1592952964487">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592944506725" />
+    <state x="1312" y="434" key="Vcs.Push.Dialog.v2/0.0.3440.1400/-1920.359.1920.1040@0.0.3440.1400" timestamp="1592952964487" />
     <state x="563" y="525" key="com.intellij.ide.util.TipDialog" timestamp="1592868034254">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>

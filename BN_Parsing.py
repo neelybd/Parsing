@@ -13,8 +13,8 @@ import csv
 
 def main():
     print("Program: Parsing")
-    print("Release: 1.11.1")
-    print("Date: 2020-06-23")
+    print("Release: 1.11.3")
+    print("Date: 2020-06-26")
     print("Author: Brian Neely")
     print()
     print()
@@ -99,24 +99,57 @@ def main():
     input("Press Enter to close...")
 
 
-def vectorize_text (data, column):
+def vectorize_text(data, column):
+    print()
+    print("Creating Vectorizer...")
     # Set vectorizer from CountVectorizer
     vectorizer = CountVectorizer()
+    print("Vectorizer Created!")
 
     # Fill NaN
+    print()
+    print("Dropping NAs...")
     data[column] = data[column].fillna("empty_text")
+    print("NAs Dropped!")
 
     # Create sparse matrix of parsed text
+    print()
+    print("Creating Sparse Matrix of Vectorized Data...")
     X = vectorizer.fit_transform(data[column])
+    print("Sparse matrix created!")
 
     # Convert sparse matrix to DataFrame
+    print()
+    print("Converting sparse matrix to dense...")
     parsed = pd.DataFrame(X.todense(), columns=vectorizer.get_feature_names())
+    print("Conversion completed!")
+
+    # Look for columns in the original data that matches new columns
+    print()
+    print("Creating list of new columns...")
+    any_match_found = True
+    while any_match_found:
+        any_match_found = False
+
+        for i in parsed:
+            column_match_found = False
+            for j in column:
+                # Set flag for found match
+                column_match_found = True
+
+            # If match found, add string into column name
+            parsed.rename(columns={i: i + "_parsed"}, inplace=True)
+            any_match_found = True
 
     # Get new headers
     new_headers = list(parsed.columns.values)
+    print("List created!")
 
     # Append original dataset to parsed dataset
+    print()
+    print("Appending new matrix to original data...")
     data_out = pd.concat([data, parsed], axis=1, sort=False)
+    print("Append complete!")
 
     # Return parsed data
     return data_out, new_headers
@@ -247,6 +280,21 @@ def parse_and_encode_data(data, column, deliminator, encode_concate, parallel=Fa
 
     # End time
     print("Parsing completed in " + str(round(time.time() - start_time, 2)) + " s")
+
+    # Look for columns in the original data that matches new columns
+    any_match_found = True
+    while any_match_found:
+        any_match_found = False
+
+        for i in data_out:
+            column_match_found = False
+            for j in column:
+                # Set flag for found match
+                column_match_found = True
+
+            # If match found, add string into column name
+            data_out.rename(columns={i: i + "_parsed"}, inplace=True)
+            any_match_found = True
 
     # Get original columns
     headers_original = list(data.columns.values)
